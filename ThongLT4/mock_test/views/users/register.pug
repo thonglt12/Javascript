@@ -1,0 +1,33 @@
+extends ../layouts/common
+block content
+    if success === true
+        .container.mt-5
+        .alert.alert-success(role='alert')
+            | Success register! Login please.
+    else 
+        .container.mt5
+            h1.text-center Register
+        if errors 
+            each error in errors
+                .alert.alert-danger=error
+
+        form(action="/user/register", method="POST")
+            .form-group.mb-3
+                label.form-label(for='exampleInputName') Name
+                input#exampleInputName.form-control(type='text',  name="name",
+                value = values ? values.name : "")
+            .form-group.mb-3
+                label.form-label(for='exampleInputEmail1') Email address
+                input#exampleInputEmail1.form-control(type='email', 
+                aria-describedby='emailHelp', name="email", 
+                value= values? values.email : "")
+                #emailHelp.form-text We&apos;ll never share your email with anyone else.
+            .form-group.mb-3
+                label.form-label(for='exampleInputPassword1') Password
+                input#exampleInputPassword1.form-control(type='password',  name="password",
+                value = values ? values.password : "")
+            .form-group.mb-3
+                label.form-label(for='confirmPassword') Confirm Password
+                input#confirmPassword.form-control(type='password',  name="confirm_password",
+                value = values ? values.confirm_password : "")
+            button.btn.btn-primary Register 

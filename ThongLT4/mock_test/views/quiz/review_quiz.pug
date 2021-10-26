@@ -1,0 +1,46 @@
+extends ../layouts/common
+block content
+    h1.text-center quiz
+    ul.list-group.list
+        li.list-group-item Title: #{quiz.title}
+        li.list-group-item Description: #{quiz.description}
+        li.list-group-item Total Questions: #{quiz.total}
+        li.list-group-item Quizer: #{user.name}
+        li.list-group-item Score: #{score}/#{quiz.total}
+    ul.list-group.list
+        -var num = 1;
+        each question in questions
+            li.list-group-item Question #{num++}: #{question.question}
+                ul.list-group.list
+                    - for (var x = 0; x <question.answersMap.length ; x++)
+                        if (question.answersMap[x].is_correct === question.answersMap[x].is_choose && question.answersMap[x].is_correct === "1") 
+                            li.list-group-item.text-primary
+                                .mb-3.form-check
+                                    input#Answer1.form-check-input(
+                                        type='checkbox', disabled="disabled",  checked='true' name="answer1")
+                                    label.form-check-label(for="Answer1") 
+                                    | Answer 1: #{question.answersMap[x].answer}
+                        else if question.answersMap[x].is_correct === question.answersMap[x].is_choose && question.answersMap[x].is_correct === "0"
+                            li.list-group-item
+                                .mb-3.form-check
+                                    input#Answer1.form-check-input(
+                                        type='checkbox', disabled="disabled",  name="answer1")
+                                    label.form-check-label(for="Answer1") 
+                                    | Answer 1: #{question.answersMap[x].answer}
+                        else if question.answersMap[x].is_correct !== question.answersMap[x].is_choose && question.answersMap[x].is_correct === "1"
+                            li.list-group-item
+                                .mb-3.form-check
+                                    input#Answer1.form-check-input(
+                                        type='checkbox', disabled="disabled", checked = "true",  name="answer1")
+                                    label.form-check-label(for="Answer1") 
+                                    | Answer 1: #{question.answersMap[x].answer}
+                        else 
+                            li.list-group-item.text-danger
+                                .mb-3.form-check
+                                    input#Answer1.form-check-input(
+                                        type='checkbox', disabled="disabled",  name="answer1")
+                                    label.form-check-label(for="Answer1") 
+                                    | Answer 1: #{question.answersMap[x].answer}
+        .mt-5
+            a.btn.btn-primary(href="/quiz") Finish
+

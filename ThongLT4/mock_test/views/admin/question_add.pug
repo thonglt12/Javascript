@@ -1,0 +1,52 @@
+extends common
+block content
+    .container.mt5
+
+        if errors 
+            each error in errors
+                .alert.alert-danger=error
+    h1.text-center Quiz: #{quiz.title}
+
+    form(action="" method="POST")
+        .form-group.mb-3
+            label.form-label() Question #{questions_number}
+            input.form-control(type='text',  name="question",
+            value = values ? values.question : "")
+
+        .form-group.mb-3
+            label.form-label() Answer 1
+            input.form-control(type='text', name="answer1", 
+            value= values? values.answer1 : "")
+        // checkbox is answer correct
+        .mb-3.form-check
+            input.form-check-input(type='checkbox',
+            name="correct1", checked="true")
+            label.form-check-label() Answer 1 is correct
+        .form-group.mb-3
+            label.form-label() Answer 2
+            input.form-control(type='text', name="answer2", 
+            value= values? values.answer2 : "")
+        // checkbox is answer correct
+        .mb-3.form-check
+            input.form-check-input(type='checkbox', name="correct2")
+            label.form-check-label() Answer 2 is correct
+        .form-group.mb-3
+            label.form-label() Answer 3
+            input.form-control(type='text', name="answer3", 
+            value= values? values.answer3 : "")
+        // checkbox is answer correct
+        .mb-3.form-check
+            input.form-check-input(type='checkbox', name="correct3")
+            label.form-check-label() Answer 3 is correct
+        .form-group.mb-3
+            label.form-label() Answer 4
+            input.form-control(type='text', name="answer4", 
+            value= values? values.answer4 : "")
+        // checkbox is answer correct
+        .mb-3.form-check
+            input.form-check-input(type='checkbox', name="correct4")
+            label.form-check-label() Answer 4 is correct
+        if finish
+            button.btn.btn-primary FINISH
+        else 
+            button.btn.btn-primary NEXT

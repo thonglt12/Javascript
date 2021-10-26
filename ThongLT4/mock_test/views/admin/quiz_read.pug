@@ -1,0 +1,19 @@
+extends common
+block content
+    .container.mt-5
+        h1.text-center quiz
+        ul.list-group.list
+            li.list-group-item Title: #{quiz.title}
+            li.list-group-item Description: #{quiz.description}
+            li.list-group-item Total Questions: #{quiz.total}
+        ol.list-group.list-group-numbered
+            each question in questions 
+                li.list-group-item #{question.question}
+                    ul.list-group.list
+                        -for (var i = 0; i < question.answersMap.length; i++)
+                            if (question.answersMap[i].is_correct === "1")
+                                li.list-group-item.text-primary Answer #{i+1}: #{question.answersMap[i].answer}
+                            else
+                                li.list-group-item Answer #{i+1}: #{question.answersMap[i].answer}
+
+                    a.btn.btn-primary(href="/admin/quiz/"+quiz.id+"/question/"+question.id+"/update") Update

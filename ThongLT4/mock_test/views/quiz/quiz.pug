@@ -1,0 +1,47 @@
+extends ../layouts/common
+block content
+    .container.mt-2
+        if errors 
+            each error in errors
+                .alert.alert-danger=error
+
+        h1.text-center quiz
+        ul.list-group.list
+            li.list-group-item Title: #{quiz.title}
+            li.list-group-item Description: #{quiz.description}
+            li.list-group-item Total Questions: #{quiz.total}
+        form(method="POST")
+            ul.list-group.list
+                li.list-group-item
+                    if multiAnswer 
+                        | Question: #{question.question} (multi-answer)
+                    else 
+                        | Question: #{question.question}
+                    ul.list-group.list
+                        -for(var x= 0; x < question.answersMap.length; x++)
+                            if userAnswer.includes(x)
+                                li.list-group-item
+                                    .mb-3.form-check
+                                        input.form-check-input( type='checkbox',
+                                            checked, name="answer"+(x+1))
+                                        label.form-check-label
+                                            | Answer #{x+1}: #{question.answersMap[x].answer} #{x}
+                            else 
+                                li.list-group-item
+                                    .mb-3.form-check
+                                        input.form-check-input(type='checkbox',
+                                            name="answer"+(x+1))
+                                        label.form-check-label
+                                            | Answer #{x+1}: #{question.answersMap[x].answer}
+
+            nav.mt-5(aria-label='Page navigation example')
+                ul.pagination
+                    if questionNum > 1
+                        li.page-item
+                            a.page-link(href="/quiz/"+quiz.id+"?q="+(questionNum - 1)) Previous
+                    li.page-item
+                        if parseInt(quiz.total) === questionNum
+                            button.page-link(type='submit') Submit
+                        else 
+                            button.page-link(type='submit') Next
+

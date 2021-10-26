@@ -1,0 +1,62 @@
+extends common
+block content
+    .container.mt-5
+        a.me-md-3.btn.btn-primary(href="/admin/quiz/add" role="button") ADD
+    table.table
+        thead
+            tr
+                th(scope='col') #
+                th(scope='col') Avatar
+                th(scope='col') Title
+                th(scope='col') Description
+                th(scope='col') Questions
+                th(scope='col') Action
+            tbody
+                - var n = 1;
+                each quiz in quizes
+                    tr
+                        th(scope='row')=n++
+                        td
+                            img(src=quiz.avatar, width="32")
+                        td #{quiz.title}
+                        td #{quiz.description}
+                        td #{quiz.total}
+                        td
+                            a.me-md-3.btn.btn-secondary(href="/admin/quiz/"+quiz.id+"/read" role="button") READ
+                            a.me-md-3.btn.btn-success(href="/admin/quiz/"+quiz.id+"/update" role="button") UPDATE
+                            a.me-md-3.btn.btn-danger(href = "", data-bs-toggle="modal", 
+                            data-bs-target="#deleteQuizModal", data-bs-id=quiz.id) DELETE
+
+
+    #deleteQuizModal.modal.fade(tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true')
+        .modal-dialog
+            .modal-content
+                .modal-header
+                    h5#exampleModalLabel.modal-title Delete quiz
+                    button.btn-close(type='button' data-bs-dismiss='modal' aria-label='Close')
+                .modal-body
+                    | Are you sure?
+                .modal-footer
+                    button.btn.btn-secondary(type='button' data-bs-dismiss='modal') Close
+                    button.btn.btn-danger(type='button' id="btn-delete-quiz") Delete
+
+    form(name="delete-form-quiz" action="" method="POST") 
+
+    script.
+        var quizId;
+        var exampleModal = document.getElementById('deleteQuizModal');
+        var deleteForm = document.forms['delete-form-quiz'];
+        var deleteBtn = document.getElementById('btn-delete-quiz')
+
+        exampleModal.addEventListener('show.bs.modal', function (event) {
+        // Button that triggered the modal
+        var button = event.relatedTarget
+        // Extract info from data-bs-* attributes
+        quizId = button.getAttribute('data-bs-id')
+        })
+
+        deleteBtn.onclick = ()=>{
+            deleteForm.action = '/admin/quiz/'+quizId+'/delete?_method=DELETE';
+            deleteForm.submit();
+        }
+
