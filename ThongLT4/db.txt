@@ -1,0 +1,101 @@
+{
+    "_id" : ObjectId("6177b4e81b91bebee4a3c4fe"),
+    "avatar" : "uploads/0a7e3cd01fe078226703fb3b484064ad",
+    "title" : "Node.js Quiz",
+    "description" : "Node.js Framework",
+    "total" : "8",
+    "createdAt" : ISODate("2021-10-26T07:57:28.028Z"),
+    "updatedAt" : ISODate("2021-10-26T07:57:28.028Z"),
+    "__v" : 0
+}
+
+question
+
+{
+    "_id" : ObjectId("6177b4e81b91bebee4a3c500"),
+    "quiz_id" : "6177b4e81b91bebee4a3c4fe",
+    "question" : "In which of the following areas, Node.js is not advised to be used?",
+    "answers" : "[{\"answer\":\"Single Page Applications\",\"is_correct\":\"0\",\"is_choose\":\"1\"},{\"answer\":\"JSON APIs based Applications\",\"is_correct\":\"0\",\"is_choose\":\"0\"},{\"answer\":\"CPU intensive applications\",\"is_correct\":\"1\",\"is_choose\":\"0\"},{\"answer\":\"Data Intensive Realtime Applications (DIRT)\",\"is_correct\":\"0\",\"is_choose\":\"0\"}]",
+    "multi_correct" : "0",
+    "createdAt" : ISODate("2021-10-26T07:57:28.038Z"),
+    "updatedAt" : ISODate("2021-10-27T03:37:38.417Z"),
+    "__v" : 0
+}
+
+{
+    "_id" : ObjectId("6177b4e81b91bebee4a3c502"),
+    "quiz_id" : "6177b4e81b91bebee4a3c4fe",
+    "question" : "What is use of Underscore Variable in REPL session?",
+    "answers" : "[{\"answer\":\"to get the last command used.\",\"is_correct\":\"0\",\"is_choose\":\"0\"},{\"answer\":\"to get the last result.\",\"is_correct\":\"1\",\"is_choose\":\"1\"},{\"answer\":\"to store the result.\",\"is_correct\":\"0\",\"is_choose\":\"0\"},{\"answer\":\"None of the above.\",\"is_correct\":\"0\",\"is_choose\":\"0\"}]",
+    "multi_correct" : "0",
+    "createdAt" : ISODate("2021-10-26T07:57:28.042Z"),
+    "updatedAt" : ISODate("2021-10-27T03:37:38.460Z"),
+    "__v" : 0
+}
+
+{
+    "_id" : ObjectId("6177b4e81b91bebee4a3c504"),
+    "quiz_id" : "6177b4e81b91bebee4a3c4fe",
+    "question" : "Which of the following is true about writable stream?",
+    "answers" : "[{\"answer\":\"writable stream is used for write operation.\",\"is_correct\":\"0\",\"is_choose\":\"0\"},{\"answer\":\"Output of readable stream can be input to a writable stream.\",\"is_correct\":\"0\",\"is_choose\":\"0\"},{\"answer\":\"Both of the above.\",\"is_correct\":\"1\",\"is_choose\":\"1\"},{\"answer\":\"None of the above.\",\"is_correct\":\"0\",\"is_choose\":\"0\"}]",
+    "multi_correct" : "0",
+    "createdAt" : ISODate("2021-10-26T07:57:28.045Z"),
+    "updatedAt" : ISODate("2021-10-27T03:37:38.463Z"),
+    "__v" : 0
+}
+
+
+{
+    "_id" : ObjectId("6177b4e81b91bebee4a3c506"),
+    "quiz_id" : "6177b4e81b91bebee4a3c4fe",
+    "question" : "Which method of fs module is used to read a file?",
+    "answers" : "[{\"answer\":\"fs.open(path, flags[, mode], callback)\",\"is_correct\":\"0\",\"is_choose\":\"0\"},{\"answer\":\"fs.openFile(path, flags[, mode], callback)\",\"is_correct\":\"0\",\"is_choose\":\"1\"},{\"answer\":\"fs.openPath(path, flags[, mode], callback)\",\"is_correct\":\"0\",\"is_choose\":\"0\"},{\"answer\":\"fs.read(fd, buffer, offset, length, position, callback)\",\"is_correct\":\"1\",\"is_choose\":\"0\"}]",
+    "multi_correct" : "0",
+    "createdAt" : ISODate("2021-10-26T07:57:28.046Z"),
+    "updatedAt" : ISODate("2021-10-27T03:37:38.465Z"),
+    "__v" : 0
+}
+
+{
+    "_id" : ObjectId("6177b4e81b91bebee4a3c508"),
+    "quiz_id" : "6177b4e81b91bebee4a3c4fe",
+    "question" : "Which of the following is true about __dirname global object?",
+    "answers" : "[{\"answer\":\"The __dirname represents the name of the directory that the currently executing script resides in.\",\"is_correct\":\"1\",\"is_choose\":\"0\"},{\"answer\":\"The __dirname represents the resolved absolute path of code file.\",\"is_correct\":\"0\",\"is_choose\":\"0\"},{\"answer\":\"Both of the above.\",\"is_correct\":\"0\",\"is_choose\":\"1\"},{\"answer\":\"None of the above.\",\"is_correct\":\"0\",\"is_choose\":\"0\"}]",
+    "multi_correct" : "0",
+    "createdAt" : ISODate("2021-10-26T07:57:28.049Z"),
+    "updatedAt" : ISODate("2021-10-27T03:37:38.467Z"),
+    "__v" : 0
+}
+
+{
+    "_id" : ObjectId("6177b4e81b91bebee4a3c50a"),
+    "quiz_id" : "6177b4e81b91bebee4a3c4fe",
+    "question" : "Which of the following code prints memory usage?",
+    "answers" : "[{\"answer\":\"console.log(process.memoryUsage());\",\"is_correct\":\"1\",\"is_choose\":\"1\"},{\"answer\":\"console.log('Current version: ' + process.memory());\",\"is_correct\":\"0\",\"is_choose\":\"0\"},{\"answer\":\"console.log('Current version: ' + process.getMemory());\",\"is_correct\":\"0\",\"is_choose\":\"0\"},{\"answer\":\"None of the above.\",\"is_correct\":\"0\",\"is_choose\":\"0\"}]",
+    "multi_correct" : "0",
+    "createdAt" : ISODate("2021-10-26T07:57:28.051Z"),
+    "updatedAt" : ISODate("2021-10-27T03:37:38.468Z"),
+    "__v" : 0
+}
+
+{
+    "_id" : ObjectId("6177b4e81b91bebee4a3c50c"),
+    "quiz_id" : "6177b4e81b91bebee4a3c4fe",
+    "question" : "Which of the following module is required for network specific operations?",
+    "answers" : "[{\"answer\":\"os module\",\"is_correct\":\"0\",\"is_choose\":\"0\"},{\"answer\":\"fs module\",\"is_correct\":\"0\",\"is_choose\":\"0\"},{\"answer\":\"net module\",\"is_correct\":\"1\",\"is_choose\":\"1\"},{\"answer\":\"None of the above.\",\"is_correct\":\"0\",\"is_choose\":\"0\"}]",
+    "multi_correct" : "0",
+    "createdAt" : ISODate("2021-10-26T07:57:28.054Z"),
+    "updatedAt" : ISODate("2021-10-27T03:37:38.470Z"),
+    "__v" : 0
+}
+
+{
+    "_id" : ObjectId("6177b4e81b91bebee4a3c50e"),
+    "quiz_id" : "6177b4e81b91bebee4a3c4fe",
+    "question" : "Which of the following module is required for DNS specific operations?",
+    "answers" : "[{\"answer\":\"dns module\",\"is_correct\":\"1\",\"is_choose\":\"0\"},{\"answer\":\"web module\",\"is_correct\":\"0\",\"is_choose\":\"1\"},{\"answer\":\"net module\",\"is_correct\":\"0\",\"is_choose\":\"0\"},{\"answer\":\"None of the above.\",\"is_correct\":\"0\",\"is_choose\":\"0\"}]",
+    "multi_correct" : "0",
+    "createdAt" : ISODate("2021-10-26T07:57:28.057Z"),
+    "updatedAt" : ISODate("2021-10-27T03:37:38.472Z"),
+    "__v" : 0
+}
